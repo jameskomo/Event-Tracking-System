@@ -11,10 +11,13 @@ app.use(
   bodyParser.urlencoded({
     extended: true,
   })
-)
+);
 
 app.get('/', (request, response) => {
     response.json({ info: 'This is an event tracker based on Node.js, Express, and Postgres API' })
-  })
+  });
 
-  
+
+app.listen(port, () => {
+    console.log(`Event Application running on port ${port}.`);
+})
