@@ -1,0 +1,11 @@
+CREATE TABLE task (ID SERIAL PRIMARY KEY, 
+task_name VARCHAR(100),
+ task_message VARCHAR(100), 
+ task_time TIME, 
+ actual_time timestamp without time zone default (now() at time zone 'utc'), 
+ display_message VARCHAR (100), 
+ task_colors TEXT[]);
+
+ id | task_name | task_message | task_time | actual_time | display_message | task_colors 
+
+ INSERT INTO task (task_name, task_message, task_time, display_message, task_colors) VALUES ('START', 'Start 16 servers', '12:00:30', '12:00:30 - start 16 servers', 'Red, Green, Blue');
