@@ -47,8 +47,7 @@ const getTasks = (request, response) => {
     const id = parseInt(request.params.id)
     const { task_name, task_message, task_time, display_message, task_colors } = request.body
   
-    pool.query(
-      'UPDATE users SET task_name = $1, task_message = $2 WHERE id = $3',
+    pool.query('UPDATE users SET task_name = $1, task_message = $2, task_time =$3, display_message =$4, task_colors=$5 WHERE id = $2',
       [task_name, task_message, task_time, display_message, task_colors, id],
       (error, results) => {
         if (error) {
@@ -59,4 +58,13 @@ const getTasks = (request, response) => {
     )
   }
 
+  const deleteTask = (request, response) => {
+    const id = parseInt(request.params.id)
   
+    pool.query('DELETE FROM task WHERE id = $1', [id], (error, results) => {
+      if (error) {
+        throw error
+      }
+      response.status(200).send(`Task deleted with ID: ${id}`)
+    })
+  }
