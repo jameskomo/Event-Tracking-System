@@ -41,3 +41,22 @@ const getTasks = (request, response) => {
       response.status(201).send(`Task added with ID: ${result.insertId}`)
     })
   }
+
+
+  const updateTask = (request, response) => {
+    const id = parseInt(request.params.id)
+    const { task_name, task_message, task_time, display_message, task_colors } = request.body
+  
+    pool.query(
+      'UPDATE users SET task_name = $1, task_message = $2 WHERE id = $3',
+      [task_name, task_message, task_time, display_message, task_colors, id],
+      (error, results) => {
+        if (error) {
+          throw error
+        }
+        response.status(200).send(`Task modified with ID: ${id}`)
+      }
+    )
+  }
+
+  
