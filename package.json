@@ -1,0 +1,11 @@
+{
+  "name": "event_tracking_system",
+  "version": "1.0.0",
+  "description": "This is an application that logs when tasks should be carried out",
+  "main": "event.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "James Komo",
+  "license": "ISC"
+}
