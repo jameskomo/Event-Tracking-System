@@ -1,7 +1,8 @@
 //jshint esversion: 6
 
-const express = require('express')
-const bodyParser = require('body-parser')
+const express = require('express');
+const bodyParser = require('body-parser');
+
 const app = express()
 const port = 3000
 
@@ -11,3 +12,9 @@ app.use(
     extended: true,
   })
 )
+
+app.get('/', (request, response) => {
+    response.json({ info: 'This is an event tracker based on Node.js, Express, and Postgres API' })
+  })
+
+  
