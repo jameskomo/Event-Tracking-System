@@ -29,4 +29,15 @@ const getTasks = (request, response) => {
       response.status(200).json(results.rows)
     })
   }
+
+
+  const createTask = (request, response) => {
+    const { task_name, task_message, task_time, display_message, task_colors } = request.body
   
+    pool.query('INSERT INTO task (task_name, task_message, task_time, display_message, task_colors) VALUES ($1, $2, $3, $4, $4)', [task_name, task_message, task_time, display_message, task_colors ], (error, results) => {
+      if (error) {
+        throw error
+      }
+      response.status(201).send(`Task added with ID: ${result.insertId}`)
+    })
+  }
