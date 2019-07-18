@@ -68,3 +68,12 @@ const getTasks = (request, response) => {
       response.status(200).send(`Task deleted with ID: ${id}`)
     })
   }
+
+
+module.exports = {
+    getTasks,
+    getTaskById,
+    createTask,
+    updateTask,
+    deleteTask,
+  }
