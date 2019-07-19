@@ -17,7 +17,7 @@ app.use(
 
 app.get('/', (request, response) => {
     response.json({ info: 'This is an event tracker based on Node.js, Express, and Postgres API' })
-
+    response.sendFile
   });
 
   app.get('/tasks', db.getTasks)

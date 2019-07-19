@@ -1,0 +1,125 @@
+#clock {
+    width: 400px;
+    height: 400px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -200px;
+    margin-top: -200px;
+  }
+  #clock .frame {
+    border: 1px solid #eee;
+    border-radius: 50%;
+    display: block;
+    height: 400px;
+    width: 400px;
+  }
+  #clock .frame ul {
+    display: block;
+    height: 400px;
+    width: 400px;
+    z-index: 10;
+    border-radius: 50%;
+    overflow: hidden;
+    position: absolute;
+  }
+  #clock .frame ul li {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    text-align: center;
+    transform: rotate(0deg);
+    line-height: 50px;
+  }
+  #clock .frame ul li:nth-child(1) {
+    transform: rotate(30deg);
+  }
+  #clock .frame ul li:nth-child(2) {
+    transform: rotate(60deg);
+  }
+  #clock .frame ul li:nth-child(3) {
+    transform: rotate(90deg);
+  }
+  #clock .frame ul li:nth-child(4) {
+    transform: rotate(120deg);
+  }
+  #clock .frame ul li:nth-child(5) {
+    transform: rotate(150deg);
+  }
+  #clock .frame ul li:nth-child(6) {
+    transform: rotate(180deg);
+  }
+  #clock .frame ul li:nth-child(7) {
+    transform: rotate(210deg);
+  }
+  #clock .frame ul li:nth-child(8) {
+    transform: rotate(240deg);
+  }
+  #clock .frame ul li:nth-child(9) {
+    transform: rotate(270deg);
+  }
+  #clock .frame ul li:nth-child(10) {
+    transform: rotate(300deg);
+  }
+  #clock .frame ul li:nth-child(11) {
+    transform: rotate(330deg);
+  }
+  #clock .frame ul li:nth-child(12) {
+    transform: rotate(0deg);
+  }
+  .hands {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    border-radius: 50%;
+  }
+  .hands:before {
+    position: absolute;
+    display: block;
+    background: transparent;
+    height: 0;
+    width: 0;
+    content: '';
+    left: 50%;
+    border: none;
+  }
+  #hours:before {
+    z-index: 5;
+    width: 8px;
+    height: 0;
+    top: 30%;
+    margin-left: -8px;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-bottom: 100px solid #222;
+  }
+  #minutes:before {
+    z-index: 6;
+    height: 0%;
+    width: 4px;
+    top: 20%;
+    margin-left: -6px;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-bottom: 150px solid #555;
+  }
+  #seconds:before {
+    z-index: 7;
+    width: 0px;
+    height: 0;
+    top: 10%;
+    margin-left: -2px;
+    border-left: 2px solid transparent;
+    border-right: 2px solid transparent;
+    border-bottom: 200px solid red;
+  }
+  p {
+    text-align: center;
+    font-family: monospace;
+    margin-top: 20px;
+  }
+  
